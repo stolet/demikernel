@@ -5,6 +5,7 @@
 # Default Paths
 #=======================================================================================================================
 
+export HOME = /local/mstolet
 export PREFIX ?= $(HOME)
 export INSTALL_PREFIX ?= $(HOME)
 export PKG_CONFIG_PATH ?= $(shell find $(PREFIX)/lib/ -name '*pkgconfig*' -type d 2> /dev/null | xargs | sed -e 's/\s/:/g')
@@ -38,7 +39,7 @@ export INPUT_DIR ?= $(CURDIR)/nettest/input
 #=======================================================================================================================
 
 # Rust
-export CARGO ?= $(shell which cargo || echo "/local/mstolet/.cargo/bin/cargo" )
+export CARGO ?= $(shell which cargo || echo "$HOME/.cargo/bin/cargo" )
 export CARGO_FLAGS += --profile $(BUILD)
 
 #=======================================================================================================================
