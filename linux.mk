@@ -40,8 +40,8 @@ export INPUT_DIR ?= $(CURDIR)/nettest/input
 # Rust
 export CARGO ?= $(shell which cargo || echo "$(HOME)/.cargo/bin/cargo" )
 export CARGO_FLAGS += --profile $(BUILD)
-echo $USER
-echo $CARGO
+$(shell echo $USER)
+$(shell echo $CARGO)
 #=======================================================================================================================
 # Libraries
 #=======================================================================================================================
