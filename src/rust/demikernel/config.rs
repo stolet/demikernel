@@ -43,6 +43,7 @@ impl Config {
     pub fn new(config_path: String) -> Self {
         // FIXME: this function should return a Result.
         let mut config_s: String = String::new();
+        println!("{}", config_path);
         File::open(config_path).unwrap().read_to_string(&mut config_s).unwrap();
         let config: Vec<Yaml> = YamlLoader::load_from_str(&config_s).unwrap();
         let config_obj: &Yaml = match &config[..] {
